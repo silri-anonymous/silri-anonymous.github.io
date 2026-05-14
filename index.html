@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description"
+    content="Efficient Training of Generalizable Visuomotor Policies via Control-Aware Augmentation">
+  <meta name="keywords" content="Zero-shot Generalization, Visuomotor Policies, Data Augmentation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Real-world Reinforcement Learning from Suboptimal Interventions</title>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+  <!-- <link href="./static/css/googlecss.css"
+        rel="stylesheet"> -->
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./static/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+  
+  <!-- 引入 MathJax 库 -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+ 
+  <script src="./static/js/jquerymin351.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <style>
+    .author-block {
+      display: block;
+    }
+    .publication-authors {
+      color: #363636;
+    }
+    .publication-authors a.author-anonymous {
+      color: orange !important;
+      text-decoration: none;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title"><strong>Real-world Reinforcement Learning from Suboptimal Interventions</strong> </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block" style="font-size: 100%;"><a href="https://silri-rl.github.io/" target="_blank" class="author-anonymous">anonymous</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="columns">
+      <div class="column has-text-centered">
+        <video poster="" autoplay controls muted loop height="100%" playbackrate="2.0" style="border-radius: 5px;">
+          <source src="./static/videos/all_video.MP4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <br>
+  </section>
+  
+
+  <section class="section" id="single-task-1">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Real-world reinforcement learning (RL) offers a promising approach to training robotic manipulation policies through online interaction. While
+              recent methods leverage human interventions to accelerate learning, they often assume interventions are consistently optimal or rely on offline
+              filtering mechanisms that may discard valuable exploratory data. In practice, human operators exhibit varying performance across different states:
+              experts may provide near-optimal guidance in familiar situations but struggle in novel or ambiguous states, while non-expert operators may
+              introduce additional suboptimality. The key challenge is how to selectively leverage heterogeneous
+              intervention quality across states while maintaining the benefits of online exploration. To address
+              this, we propose <strong>SiLRI</strong>, a state-wise Lagrangian RL algorithm that adaptively trades off between
+              imitating interventions and maximizing future returns. We formulate online learning as a constrained optimization problem where constraint
+              bounds vary across states according to estimated intervention uncertainty. This problem is then
+              solved via state-wise Lagrangian relaxation, enabling the policy to selectively imitate interventions in high-confidence regions while relying
+              more on RL exploration elsewhere. We evaluate <strong>SiLRI</strong>  on nine real-world manipulation tasks
+              using a human-as-copilot teleoperation system.
+              Compared to methods that uniformly incorporate interventions, SiLRI achieves at least 50%
+              faster learning, effectively exploiting suboptimal human interventions without being constrained by them.
+            </p>
+          </div>
+        </div>
+      </div>
+      <br>
+      <!--/ Abstract. -->
+
+
+      <section class="section" id="demo">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column is-full-width">
+              <h2 class="title is-3">Method</h2>
+              <div class="hero-body">
+                <div class="yush-div-center">
+                  <img src="./static/images/overview_new.png" class="img-responsive" style="width: 100%; height: auto;">
+                </div>
+                <div class="content has-text-justified">
+                  <p>
+                    <strong>SiLRI Enables Effective Real-world RL from Suboptimal Interventions.</strong>
+                    Seamless human intervention is provided via a teleoperation system, 
+                    though interventions can be suboptimal (e.g., inconsistent actions in the same state; purple). 
+                    SiLRI uses state-wise Lagrange multipliers to adaptively balance the RL and BC objectives (blue), 
+                    enabling efficient online training on a dual-arm humanoid robot (green) and two other embodiments (yellow, A-H), 
+                    with training time from 0.5 to 2.5 hours.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+  </section>
+
+  <section class="section" id="demo">
+    <div class="container is-max-desktop">
+      <!-- Experiment  -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Experiments</h2>
+          <!-- Experiment  -->
+          <br>
+          <div class="content has-text-justified">
+            <p>
+              We design 9 real-world manipulation tasks covering mixed skills, articulated-object manipulation,
+              precise manipulation, and deformable-object handling. These tasks include: (A) Pick-Place Bread (B) Pick-up Spoon (C) Fold
+              Rag (D) Open Cabinet (E) Close Trashbin (F) Push-T (G) Hang Chinese Knot (H) Insert USB (I) Hang Clothes. We compare SiLRI with five baseline methods: HIL-SERL, ConRFT, AWAC, Rlif and HG-Dagger.
+              We deliberately introduce external disturbances to examine the robustness and failure recovery ability of each method in four tasks to evaluate the robustness of SiLRI.
+            </p>
+          </div>
+          <div class="columns">
+            <div class="column has-text-centered">
+              <video poster="" autoplay controls muted loop height="100%" playbackrate="2.0" style="border-radius: 5px;">
+                <source src="./static/videos/close_trashbin.mp4" type="video/mp4">
+              </video>
+              <p style="font-size: 125%"><b>Close Trashbin</b></p>
+            </div>
+            <div class="column has-text-centered">
+              <video poster="" autoplay controls muted loop height="100%" playbackrate="2.0" style="border-radius: 5px;">
+                <source src="./static/videos/push_T.mp4" type="video/mp4">
+              </video>
+              <p style="font-size: 125%"><b>Push-T</b></p>
+            </div>
+          </div>
+          <br>
+          <div class="columns">
+            <div class="column has-text-centered">
+              <video poster="" autoplay controls muted loop height="100%" playbackrate="2.0" style="border-radius: 5px;">
+                <source src="./static/videos/hang_chinese_knot.mp4" type="video/mp4">
+              </video>
+              <p style="font-size: 125%"><b>Hang Chinese Knot</b></p>
+            </div>
+            <div class="column has-text-centered">
+              <video poster="" autoplay controls muted loop height="100%" playbackrate="2.0" style="border-radius: 5px;">
+                <source src="./static/videos/insert_USB.mp4" type="video/mp4">
+              </video>
+              <p style="font-size: 125%"><b>Insert USB</b></p>
+            </div>
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="demo">
+    <div class="container is-max-desktop">
+      <!-- Conclusion  -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Conclusion</h2>
+          <!-- Conclusion  -->
+          <p>
+            In this work, we propose a state-wise Lagrangian reinforcement learning (RL) algorithm from suboptimal interventions, for real-world robot manipulation training. Observing the fact that human operators have different confidence
+            level and manipulation skill over different states, a state-dependent constraint is added to the RL objective to automatically adjust the distance between human policy and
+            learned policy. Building on a human-as-copilot teleoperation system, we evaluate our method with other SOTA
+            online RL and imitation learning methods on 9 manipulation tasks on 3 embodiments. Experimental results show the
+            efficiency of SiLRI to utilize the suboptimal interventions at the beginning of training and converge to a high success
+            rate at the end. Other ablation studies and investigation experiments also conducted to learn the advantage of SiLRI.
+          </p>
+          <br>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>
